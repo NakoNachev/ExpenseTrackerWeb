@@ -1,4 +1,4 @@
-export declare class Expense {
+export declare class ExpenseEntity {
     private expenseId;
     private expenseAmount;
     private expenseDescription;

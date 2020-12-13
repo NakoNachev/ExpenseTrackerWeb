@@ -1181,11 +1181,6 @@
         "signature": "d8f4cb0109c1b399d657807fd6af504d74a9300325e0fc915abdbf658b464a97",
         "affectsGlobalScope": false
       },
-      "../src/app.controller.ts": {
-        "version": "260f889b9e2b69f77be1155348eb345166aec664b3efff6720053c6844a41f28",
-        "signature": "3293b0d1d6a7f902316e164fcf36ae099f1bbb0224484586eaab30d9dea78d32",
-        "affectsGlobalScope": false
-      },
       "../node_modules/typeorm/schema-builder/options/tablecolumnoptions.d.ts": {
         "version": "222ebf19b1260582fd2023a65c5b7da77f730021f05afb9c4ead4b0b339a8c98",
         "signature": "222ebf19b1260582fd2023a65c5b7da77f730021f05afb9c4ead4b0b339a8c98",
@@ -2476,6 +2471,11 @@
         "signature": "65916fb178938c9fb2c0588cf5447f5b5de992d50d0e308d6b2169a027fa9dd5",
         "affectsGlobalScope": false
       },
+      "../src/entities/expense.entity.ts": {
+        "version": "caca9df295fad71d7e5c1f7ec9de930006d3935fd4b4506b2a60e74de81fe0ff",
+        "signature": "15e550f77978bf7b9a8583a8448ddf055588b954e4f0172c0010f003373b04c7",
+        "affectsGlobalScope": false
+      },
       "../node_modules/@nestjs/typeorm/dist/interfaces/entity-class-or-schema.type.d.ts": {
         "version": "e15db0d01139d39213a40639352debd92786f311e0421c21ac97c2ca4003a299",
         "signature": "e15db0d01139d39213a40639352debd92786f311e0421c21ac97c2ca4003a299",
@@ -2521,13 +2521,23 @@
         "signature": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f",
         "affectsGlobalScope": false
       },
+      "../src/services/expense.service.ts": {
+        "version": "423560c35d9e9c8138840a4ab7fc88ce2e9200f72dc1654addd1a06da0c76d52",
+        "signature": "81f7283a839d76cfca6853af38844674396021f85140642747e4ec87cdbb086a",
+        "affectsGlobalScope": false
+      },
+      "../src/app.controller.ts": {
+        "version": "2f9671e4cb454e1601f70659c3b3ad529f65fde5d903d6509811eb424f81a00d",
+        "signature": "6cde8a51175592cb3a59a6077dbb6657f1cbf2f8721588c52c577cf5e29321b7",
+        "affectsGlobalScope": false
+      },
       "../src/database-connection.service.ts": {
         "version": "fe5ed906c49474ab4390a539602846608b0e53f3415045bf4a25582a45ad333f",
         "signature": "7d4a7468925e85311b37f5a8e7fc88fe6577407ca8f4f688598891fef89d8160",
         "affectsGlobalScope": false
       },
       "../src/app.module.ts": {
-        "version": "12f2a33a93463145f2e1f325aa921ce1452357b5e7fafe5e1fc31513c917a3b3",
+        "version": "e6bce2ca03da6829c2f514e7d2c1f79954263564cb4236b1f6fb4d0a98f15c2d",
         "signature": "9fc7f7b6ad854404973b8cba8e6d883f758237991968e9a3965d716d46f1da88",
         "affectsGlobalScope": false
       },
@@ -2714,11 +2724,6 @@
       "../src/main.ts": {
         "version": "238a1a121e1989daf47233403a39e112fd099590dd60a19b4a8548cab4362d1d",
         "signature": "0e7c6f172815224902d2b780918250d131abb33ddc0f2e042ab423db53f72370",
-        "affectsGlobalScope": false
-      },
-      "../src/entities/expense.entity.ts": {
-        "version": "5f0534bea16162c05d8e49e652a72581a984d779a7936d00244b949d7f4a065b",
-        "signature": "78e75fb704215aaa87ced2bf923bb51a51f5f3f9e29a68bad2efbca18529e61f",
         "affectsGlobalScope": false
       },
       "../node_modules/@types/anymatch/index.d.ts": {
@@ -5678,14 +5683,18 @@
       ],
       "../src/app.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
-        "../src/app.service.ts"
+        "../src/app.service.ts",
+        "../src/entities/expense.entity.ts",
+        "../src/services/expense.service.ts"
       ],
       "../src/app.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/typeorm/index.d.ts",
         "../src/app.controller.ts",
         "../src/app.service.ts",
-        "../src/database-connection.service.ts"
+        "../src/database-connection.service.ts",
+        "../src/entities/expense.entity.ts",
+        "../src/services/expense.service.ts"
       ],
       "../src/app.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts"
@@ -5700,6 +5709,12 @@
       "../src/main.ts": [
         "../node_modules/@nestjs/core/index.d.ts",
         "../src/app.module.ts"
+      ],
+      "../src/services/expense.service.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/typeorm/index.d.ts",
+        "../node_modules/typeorm/index.d.ts",
+        "../src/entities/expense.entity.ts"
       ]
     },
     "exportedModulesMap": {
@@ -8098,10 +8113,16 @@
         "../node_modules/typeorm/query-runner/queryrunner.d.ts"
       ],
       "../src/app.controller.ts": [
-        "../src/app.service.ts"
+        "../src/app.service.ts",
+        "../src/entities/expense.entity.ts",
+        "../src/services/expense.service.ts"
       ],
       "../src/database-connection.service.ts": [
         "../node_modules/@nestjs/typeorm/index.d.ts"
+      ],
+      "../src/services/expense.service.ts": [
+        "../node_modules/typeorm/index.d.ts",
+        "../src/entities/expense.entity.ts"
       ]
     },
     "semanticDiagnosticsPerFile": []

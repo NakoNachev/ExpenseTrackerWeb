@@ -1,7 +1,7 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity("expense")
-export class Expense {
+export class ExpenseEntity {
 
     @PrimaryGeneratedColumn('increment')
     private expenseId: string;

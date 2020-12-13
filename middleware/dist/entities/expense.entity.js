@@ -9,28 +9,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Expense = void 0;
+exports.ExpenseEntity = void 0;
 const typeorm_1 = require("typeorm");
-let Expense = class Expense {
+let ExpenseEntity = class ExpenseEntity {
 };
 __decorate([
     typeorm_1.PrimaryGeneratedColumn('increment'),
     __metadata("design:type", String)
-], Expense.prototype, "expenseId", void 0);
+], ExpenseEntity.prototype, "expenseId", void 0);
 __decorate([
     typeorm_1.Column({ name: "expense_amount" }),
     __metadata("design:type", Number)
-], Expense.prototype, "expenseAmount", void 0);
+], ExpenseEntity.prototype, "expenseAmount", void 0);
 __decorate([
     typeorm_1.Column({ name: "expense_description" }),
     __metadata("design:type", String)
-], Expense.prototype, "expenseDescription", void 0);
+], ExpenseEntity.prototype, "expenseDescription", void 0);
 __decorate([
     typeorm_1.Column({ name: "expense_date" }),
     __metadata("design:type", String)
-], Expense.prototype, "expenseDate", void 0);
-Expense = __decorate([
+], ExpenseEntity.prototype, "expenseDate", void 0);
+ExpenseEntity = __decorate([
     typeorm_1.Entity("expense")
-], Expense);
-exports.Expense = Expense;
+], ExpenseEntity);
+exports.ExpenseEntity = ExpenseEntity;
 //# sourceMappingURL=expense.entity.js.map

@@ -12,15 +12,18 @@ const typeorm_1 = require("@nestjs/typeorm");
 const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
 const database_connection_service_1 = require("./database-connection.service");
+const expense_entity_1 = require("./entities/expense.entity");
+const expense_service_1 = require("./services/expense.service");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     common_1.Module({
         imports: [typeorm_1.TypeOrmModule.forRootAsync({
                 useClass: database_connection_service_1.DatabaseConnectionService
-            })],
+            }),
+            typeorm_1.TypeOrmModule.forFeature([expense_entity_1.ExpenseEntity])],
         controllers: [app_controller_1.AppController],
-        providers: [app_service_1.AppService],
+        providers: [app_service_1.AppService, expense_service_1.ExpenseService],
     })
 ], AppModule);
 exports.AppModule = AppModule;

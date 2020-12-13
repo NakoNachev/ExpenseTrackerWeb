@@ -1,0 +1,13 @@
+<div>
+    <table id="data">
+        <th *ngFor ="let column of data['table_headers']">
+            {{column}}
+        </th>
+        <tr *ngFor="let row of data['series']">
+            <td *ngFor = "let column of data['table_headers']">
+                {{row[column]}}
+            </td>    
+        </tr>
+    
+    </table>
+</div>

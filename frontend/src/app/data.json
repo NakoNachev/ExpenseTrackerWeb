@@ -1,0 +1,47 @@
+{ "data": {
+    "table_headers": ["ID","Amount","Date","Description","Expense type"],
+    "series": [
+    {
+        "ID": 1,
+        "Amount": 200,
+        "Date": "20.11.2020",
+        "Description": "Aldi einkaufen",
+        "Expense type": "Einkaufen"
+        },
+
+    {
+        "ID": 2,
+        "Amount": 100,
+        "Date": "21.11.2020",
+        "Description": "Aldi einkaufen",
+        "Expense type": "Einkaufen"
+        },
+
+    {
+        "ID": 3,
+        "Amount": 60,
+        "Date": "23.11.2020",
+        "Description": "Aldi einkaufen",
+        "Expense type": "Einkaufen"
+        }
+    ]
+
+    },
+    
+    "chart_options": {
+        "chart": {
+            "type": "line"
+        },        
+        "title": "Expenses",
+        "xAxis": {
+            "categories": []
+        },
+        "yAxis": {
+            "title": {
+                "text": "yAxis"
+            }
+        }
+
+
+    }
+}

@@ -5,6 +5,7 @@ import { AppService } from './app.service';
 import { DatabaseConnectionService } from './database-connection.service';
 import { ExpenseEntity } from './entities/expense.entity';
 import { ExpenseService } from './services/expense.service';
+import { StopwatchService } from './services/stopwatch-service';
 
 @Module({
   imports: [TypeOrmModule.forRootAsync({
@@ -12,6 +13,6 @@ import { ExpenseService } from './services/expense.service';
   }),
           TypeOrmModule.forFeature([ExpenseEntity])],
   controllers: [AppController],
-  providers: [AppService,ExpenseService],
+  providers: [AppService,ExpenseService,StopwatchService],
 })
 export class AppModule {}

@@ -13,16 +13,21 @@ exports.AppController = void 0;
 const common_1 = require("@nestjs/common");
 const app_service_1 = require("./app.service");
 const expense_service_1 = require("./services/expense.service");
+const stopwatch_service_1 = require("./services/stopwatch-service");
 let AppController = class AppController {
-    constructor(appService, expenseService) {
+    constructor(appService, expenseService, stopwatchService) {
         this.appService = appService;
         this.expenseService = expenseService;
+        this.stopwatchService = stopwatchService;
     }
     getHello() {
         return this.appService.getHello();
     }
     getAll() {
         return this.expenseService.getAll();
+    }
+    getStopwatch() {
+        return this.stopwatchService.consoleTimeTest();
     }
 };
 __decorate([
@@ -37,10 +42,17 @@ __decorate([
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], AppController.prototype, "getAll", null);
+__decorate([
+    common_1.Get("/stopwatch"),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], AppController.prototype, "getStopwatch", null);
 AppController = __decorate([
     common_1.Controller(),
     __metadata("design:paramtypes", [app_service_1.AppService,
-        expense_service_1.ExpenseService])
+        expense_service_1.ExpenseService,
+        stopwatch_service_1.StopwatchService])
 ], AppController);
 exports.AppController = AppController;
 //# sourceMappingURL=app.controller.js.map

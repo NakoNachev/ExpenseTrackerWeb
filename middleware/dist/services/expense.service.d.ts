@@ -5,7 +5,7 @@ export declare class ExpenseService {
     constructor(expenseRepository: Repository<ExpenseEntity>);
     getAll(): Promise<ExpenseEntity[]>;
     getByDate(): void;
-    getById(): void;
+    getById(id: any[]): Promise<ExpenseEntity[]>;
     getByLeastAmount(): void;
     public: any;
 }

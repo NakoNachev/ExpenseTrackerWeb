@@ -24,8 +24,11 @@ let ExpenseService = class ExpenseService {
     getAll() {
         return this.expenseRepository.find();
     }
-    getByDate() { }
-    getById() { }
+    getByDate() {
+    }
+    getById(id) {
+        return this.expenseRepository.findByIds(id);
+    }
     getByLeastAmount() {
     }
 };

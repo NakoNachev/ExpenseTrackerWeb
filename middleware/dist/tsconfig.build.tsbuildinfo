@@ -2522,13 +2522,33 @@
         "affectsGlobalScope": false
       },
       "../src/services/expense.service.ts": {
-        "version": "423560c35d9e9c8138840a4ab7fc88ce2e9200f72dc1654addd1a06da0c76d52",
-        "signature": "81f7283a839d76cfca6853af38844674396021f85140642747e4ec87cdbb086a",
+        "version": "475c9ebd96f2bb58fcc49dce51ca2fba68f9796cf6af3ce0f101c9a6cbf86190",
+        "signature": "4af6276a7ee0372582fff7f518561dabc0f8d9612a4597ff76a7d1b6437ec8b3",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/stopwatch-node/dist/taskinfo.d.ts": {
+        "version": "7c921e95bb753defbe12e8d3b29a87d8509175de45813fa330bfa209c6fcc121",
+        "signature": "7c921e95bb753defbe12e8d3b29a87d8509175de45813fa330bfa209c6fcc121",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/stopwatch-node/dist/stopwatch.d.ts": {
+        "version": "74077e5bbb772b05fa52643a184f17a60bbda1db7ab853d45f19ffd20ad8d361",
+        "signature": "74077e5bbb772b05fa52643a184f17a60bbda1db7ab853d45f19ffd20ad8d361",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/stopwatch-node/dist/index.d.ts": {
+        "version": "e444bc48e57ede2d4d438063efe338a50d636cb9730a62d5c01edb24668220e1",
+        "signature": "e444bc48e57ede2d4d438063efe338a50d636cb9730a62d5c01edb24668220e1",
+        "affectsGlobalScope": false
+      },
+      "../src/services/stopwatch-service.ts": {
+        "version": "1112f0983430c5074a6c7cb38ab48b370c7fcfcb5988e2849ae50d41b3a41021",
+        "signature": "d187f0d1e5ebc5a17ebada4be84021e5d8b7be4cf642ba1dc5282b6eba7ec292",
         "affectsGlobalScope": false
       },
       "../src/app.controller.ts": {
-        "version": "2f9671e4cb454e1601f70659c3b3ad529f65fde5d903d6509811eb424f81a00d",
-        "signature": "6cde8a51175592cb3a59a6077dbb6657f1cbf2f8721588c52c577cf5e29321b7",
+        "version": "65259cf96feb886ea6acb9ab445862223f2c875cad393840e1c4eaae2b8d8e8d",
+        "signature": "94a0e06d3994556d073a4bff91397f7c68c376a6301c292e9413c5021bfc44f2",
         "affectsGlobalScope": false
       },
       "../src/database-connection.service.ts": {
@@ -2537,7 +2557,7 @@
         "affectsGlobalScope": false
       },
       "../src/app.module.ts": {
-        "version": "e6bce2ca03da6829c2f514e7d2c1f79954263564cb4236b1f6fb4d0a98f15c2d",
+        "version": "44f0bf61d29cd0d176f7cd0be0c457e6e0179d9ee98538f379763b0af51003ba",
         "signature": "9fc7f7b6ad854404973b8cba8e6d883f758237991968e9a3965d716d46f1da88",
         "affectsGlobalScope": false
       },
@@ -2722,7 +2742,7 @@
         "affectsGlobalScope": false
       },
       "../src/main.ts": {
-        "version": "238a1a121e1989daf47233403a39e112fd099590dd60a19b4a8548cab4362d1d",
+        "version": "b695c1e380205fdb05704dd148f21a33dc740653d029b4ce5c3b5d8efa152aae",
         "signature": "0e7c6f172815224902d2b780918250d131abb33ddc0f2e042ab423db53f72370",
         "affectsGlobalScope": false
       },
@@ -4596,6 +4616,12 @@
       "../node_modules/rxjs/internal/util/pipe.d.ts": [
         "../node_modules/rxjs/internal/types.d.ts"
       ],
+      "../node_modules/stopwatch-node/dist/index.d.ts": [
+        "../node_modules/stopwatch-node/dist/stopwatch.d.ts"
+      ],
+      "../node_modules/stopwatch-node/dist/stopwatch.d.ts": [
+        "../node_modules/stopwatch-node/dist/taskinfo.d.ts"
+      ],
       "../node_modules/typeorm/cache/queryresultcache.d.ts": [
         "../node_modules/typeorm/cache/queryresultcacheoptions.d.ts",
         "../node_modules/typeorm/query-runner/queryrunner.d.ts"
@@ -5685,7 +5711,8 @@
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/app.service.ts",
         "../src/entities/expense.entity.ts",
-        "../src/services/expense.service.ts"
+        "../src/services/expense.service.ts",
+        "../src/services/stopwatch-service.ts"
       ],
       "../src/app.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
@@ -5694,7 +5721,8 @@
         "../src/app.service.ts",
         "../src/database-connection.service.ts",
         "../src/entities/expense.entity.ts",
-        "../src/services/expense.service.ts"
+        "../src/services/expense.service.ts",
+        "../src/services/stopwatch-service.ts"
       ],
       "../src/app.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts"
@@ -5707,6 +5735,7 @@
         "../node_modules/typeorm/index.d.ts"
       ],
       "../src/main.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/core/index.d.ts",
         "../src/app.module.ts"
       ],
@@ -5715,6 +5744,10 @@
         "../node_modules/@nestjs/typeorm/index.d.ts",
         "../node_modules/typeorm/index.d.ts",
         "../src/entities/expense.entity.ts"
+      ],
+      "../src/services/stopwatch-service.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/stopwatch-node/dist/index.d.ts"
       ]
     },
     "exportedModulesMap": {
@@ -7027,6 +7060,12 @@
       "../node_modules/rxjs/internal/util/pipe.d.ts": [
         "../node_modules/rxjs/internal/types.d.ts"
       ],
+      "../node_modules/stopwatch-node/dist/index.d.ts": [
+        "../node_modules/stopwatch-node/dist/stopwatch.d.ts"
+      ],
+      "../node_modules/stopwatch-node/dist/stopwatch.d.ts": [
+        "../node_modules/stopwatch-node/dist/taskinfo.d.ts"
+      ],
       "../node_modules/typeorm/cache/queryresultcache.d.ts": [
         "../node_modules/typeorm/cache/queryresultcacheoptions.d.ts",
         "../node_modules/typeorm/query-runner/queryrunner.d.ts"
@@ -8115,7 +8154,8 @@
       "../src/app.controller.ts": [
         "../src/app.service.ts",
         "../src/entities/expense.entity.ts",
-        "../src/services/expense.service.ts"
+        "../src/services/expense.service.ts",
+        "../src/services/stopwatch-service.ts"
       ],
       "../src/database-connection.service.ts": [
         "../node_modules/@nestjs/typeorm/index.d.ts"

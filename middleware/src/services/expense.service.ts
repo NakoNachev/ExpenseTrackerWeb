@@ -34,6 +34,7 @@ export class ExpenseService {
 
     public addExpenseObject(expenseEntity: ExpenseEntity){
         this.expenseRepository.save(expenseEntity);
+        //
     }
 
 }

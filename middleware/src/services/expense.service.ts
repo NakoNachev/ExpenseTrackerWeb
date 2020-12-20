@@ -32,4 +32,8 @@ export class ExpenseService {
     public getByLeastAmount(){
     }
 
+    public addExpenseObject(expenseEntity: ExpenseEntity){
+        this.expenseRepository.save(expenseEntity);
+    }
+
 }

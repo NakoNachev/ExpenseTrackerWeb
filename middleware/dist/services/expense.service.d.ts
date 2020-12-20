@@ -4,8 +4,7 @@ export declare class ExpenseService {
     private expenseRepository;
     constructor(expenseRepository: Repository<ExpenseEntity>);
     getAll(): Promise<ExpenseEntity[]>;
-    getByDate(): void;
+    getByDate(requestDate: Date): import("typeorm").SelectQueryBuilder<ExpenseEntity>;
     getById(id: any[]): Promise<ExpenseEntity[]>;
     getByLeastAmount(): void;
-    public: any;
 }

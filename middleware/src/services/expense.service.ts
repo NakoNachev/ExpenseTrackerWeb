@@ -17,7 +17,11 @@ export class ExpenseService {
         return this.expenseRepository.find();
     }
 
-    public getByDate(){
+    public getByDate(requestDate: Date){
+
+        return this.expenseRepository.createQueryBuilder()
+        .select("expense")
+        .where("expense.date = :date", {date: requestDate});
 
     }
 
@@ -28,5 +32,4 @@ export class ExpenseService {
     public getByLeastAmount(){
     }
 
-    public 
 }

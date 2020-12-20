@@ -12,33 +12,37 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ExpenseService = void 0;
+exports.ExpenseController = void 0;
 const common_1 = require("@nestjs/common");
-const typeorm_1 = require("@nestjs/typeorm");
 const expense_entity_1 = require("../entities/expense.entity");
-const typeorm_2 = require("typeorm");
-let ExpenseService = class ExpenseService {
-    constructor(expenseRepository) {
-        this.expenseRepository = expenseRepository;
+const expense_service_1 = require("../services/expense.service");
+let ExpenseController = class ExpenseController {
+    constructor(expenseService) {
+        this.expenseService = expenseService;
     }
     getAll() {
-        return this.expenseRepository.find();
+        return this.expenseService.getAll();
     }
     getByDate(requestDate) {
-        return this.expenseRepository.createQueryBuilder()
-            .select("expense")
-            .where("expense.date = :date", { date: requestDate });
-    }
-    getById(id) {
-        return this.expenseRepository.findByIds(id);
-    }
-    getByLeastAmount() {
+        return this.expenseService.getByDate(requestDate);
     }
 };
-ExpenseService = __decorate([
-    common_1.Injectable(),
-    __param(0, typeorm_1.InjectRepository(expense_entity_1.ExpenseEntity)),
-    __metadata("design:paramtypes", [typeorm_2.Repository])
-], ExpenseService);
-exports.ExpenseService = ExpenseService;
-//# sourceMappingURL=expense.service.js.map
+__decorate([
+    common_1.Get("/all"),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], ExpenseController.prototype, "getAll", null);
+__decorate([
+    common_1.Get("/date"),
+    __param(0, common_1.Param('requestDate')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Date]),
+    __metadata("design:returntype", void 0)
+], ExpenseController.prototype, "getByDate", null);
+ExpenseController = __decorate([
+    common_1.Controller("/expenses"),
+    __metadata("design:paramtypes", [expense_service_1.ExpenseService])
+], ExpenseController);
+exports.ExpenseController = ExpenseController;
+//# sourceMappingURL=expense.controller.js.map

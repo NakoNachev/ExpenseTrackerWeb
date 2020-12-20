@@ -26,8 +26,8 @@ __decorate([
     __metadata("design:type", String)
 ], ExpenseEntity.prototype, "expenseDescription", void 0);
 __decorate([
-    typeorm_1.Column({ name: "expense_date" }),
-    __metadata("design:type", String)
+    typeorm_1.Column({ name: "expense_date", type: "date" }),
+    __metadata("design:type", Date)
 ], ExpenseEntity.prototype, "expenseDate", void 0);
 ExpenseEntity = __decorate([
     typeorm_1.Entity("expense")

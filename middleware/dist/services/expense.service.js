@@ -26,13 +26,21 @@ let ExpenseService = class ExpenseService {
     }
     getByDate(requestDate) {
         return this.expenseRepository.createQueryBuilder()
-            .select("expense")
             .where("expense.date = :date", { date: requestDate });
     }
     getById(id) {
         return this.expenseRepository.findByIds(id);
     }
-    getByLeastAmount() {
+    getByLeastAmount(minAmount) {
+        return this.expenseRepository.createQueryBuilder()
+            .where("expense_amount >= :minAmount", { minAmount: minAmount });
+    }
+    getByDescription(description) {
+        return this.expenseRepository.createQueryBuilder()
+            .where("expense_description = :description", { description: description });
+    }
+    addExpenseObject(expenseEntity) {
+        this.expenseRepository.save(expenseEntity);
     }
 };
 ExpenseService = __decorate([

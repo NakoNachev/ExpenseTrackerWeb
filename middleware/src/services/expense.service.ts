@@ -20,7 +20,6 @@ export class ExpenseService {
     public getByDate(requestDate: Date){
 
         return this.expenseRepository.createQueryBuilder()
-        .select("expense")
         .where("expense.date = :date", {date: requestDate});
 
     }
@@ -29,7 +28,15 @@ export class ExpenseService {
         return this.expenseRepository.findByIds(id);
     }
 
-    public getByLeastAmount(){
+    public getByLeastAmount(minAmount:number){
+
+        return this.expenseRepository.createQueryBuilder()
+        .where("expense_amount >= :minAmount",{minAmount:minAmount});
+    }
+
+    public getByDescription(description:string){
+        return this.expenseRepository.createQueryBuilder()
+        .where("expense_description = :description", {description:description});
     }
 
     public addExpenseObject(expenseEntity: ExpenseEntity){

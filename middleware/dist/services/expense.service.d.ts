@@ -6,5 +6,7 @@ export declare class ExpenseService {
     getAll(): Promise<ExpenseEntity[]>;
     getByDate(requestDate: Date): import("typeorm").SelectQueryBuilder<ExpenseEntity>;
     getById(id: any[]): Promise<ExpenseEntity[]>;
-    getByLeastAmount(): void;
+    getByLeastAmount(minAmount: number): import("typeorm").SelectQueryBuilder<ExpenseEntity>;
+    getByDescription(description: string): import("typeorm").SelectQueryBuilder<ExpenseEntity>;
+    addExpenseObject(expenseEntity: ExpenseEntity): void;
 }

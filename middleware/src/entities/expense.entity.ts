@@ -12,8 +12,8 @@ export class ExpenseEntity {
     @Column({name: "expense_description"})
     private expenseDescription: string;
 
-    @Column({name: "expense_date"})
-    private expenseDate: string;
+    @Column({name: "expense_date", type:"date"})
+    private expenseDate: Date;
 
 
 }

@@ -7,5 +7,6 @@ export declare class ExpenseController {
     getByDate(requestDate: Date): Promise<ExpenseEntity[]>;
     getByMinAmount(minAmount: number): Promise<ExpenseEntity[]>;
     getByDescription(description: string): Promise<ExpenseEntity[]>;
-    addNewExpense(expenseEntity: ExpenseEntity): any;
+    addNewExpense(expenseEntity: ExpenseEntity): void;
+    addCustomNewExpense(description: string, amount: number, date: Date): void;
 }

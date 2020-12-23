@@ -33,7 +33,14 @@ let ExpenseController = class ExpenseController {
         return this.expenseService.getByDescription(description).getMany();
     }
     addNewExpense(expenseEntity) {
-        return this.addNewExpense(expenseEntity);
+        return this.expenseService.addExpenseObject(expenseEntity);
+    }
+    addCustomNewExpense(description, amount, date) {
+        let customExpenseEntity = new expense_entity_1.ExpenseEntity();
+        customExpenseEntity.setExpenseDescription = description;
+        customExpenseEntity.setExpenseAmount = amount;
+        customExpenseEntity.setExpenseDate = date;
+        return this.expenseService.addExpenseObject(customExpenseEntity);
     }
 };
 __decorate([
@@ -70,6 +77,15 @@ __decorate([
     __metadata("design:paramtypes", [expense_entity_1.ExpenseEntity]),
     __metadata("design:returntype", void 0)
 ], ExpenseController.prototype, "addNewExpense", null);
+__decorate([
+    common_1.Post("add_expense/:description/:amount/:date"),
+    __param(0, common_1.Param('description')),
+    __param(1, common_1.Param('amount')),
+    __param(2, common_1.Param('date')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, Number, Date]),
+    __metadata("design:returntype", void 0)
+], ExpenseController.prototype, "addCustomNewExpense", null);
 ExpenseController = __decorate([
     common_1.Controller("/expenses"),
     __metadata("design:paramtypes", [expense_service_1.ExpenseService])

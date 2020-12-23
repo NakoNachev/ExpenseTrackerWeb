@@ -2472,8 +2472,8 @@
         "affectsGlobalScope": false
       },
       "../src/entities/expense.entity.ts": {
-        "version": "21bfabe136eaae5f3388c1601aa766ab57e564825961f26b74ed54a7e16e0d67",
-        "signature": "15e550f77978bf7b9a8583a8448ddf055588b954e4f0172c0010f003373b04c7",
+        "version": "ec30ba032256ed2e33e2a26a54162e39ccec1ef177047ea553a37f7927574052",
+        "signature": "9682b556c0dfb9358215ab4ef988ba9e6f0c4b4cd79eae6e44d49cdaafbba9f7",
         "affectsGlobalScope": false
       },
       "../node_modules/@nestjs/typeorm/dist/interfaces/entity-class-or-schema.type.d.ts": {
@@ -2737,8 +2737,8 @@
         "affectsGlobalScope": false
       },
       "../src/controllers/expense.controller.ts": {
-        "version": "2b9f3b261ef9ddf98ac1f7208313d795bdbd32794717b9c59bc1a6c9eec96e55",
-        "signature": "248b868ac1f77f1688527f88bd196a712285148439c05475a648df1d3754b062",
+        "version": "4f03af8a1c7910907210f4d8edea5ae55d3fe94bb85e2805e5df73c5bc0bbab6",
+        "signature": "3f55e8990d8d6d8f0932aad793272c208f03430e64418aefd7506825db2b2949",
         "affectsGlobalScope": false
       },
       "../src/database-connection.service.ts": {

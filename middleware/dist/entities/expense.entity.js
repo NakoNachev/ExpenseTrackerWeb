@@ -12,6 +12,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ExpenseEntity = void 0;
 const typeorm_1 = require("typeorm");
 let ExpenseEntity = class ExpenseEntity {
+    set setExpenseDescription(description) {
+        this.expenseDescription = description;
+    }
+    set setExpenseAmount(amount) {
+        this.expenseAmount = amount;
+    }
+    set setExpenseDate(date) {
+        this.expenseDate = date;
+    }
 };
 __decorate([
     typeorm_1.PrimaryGeneratedColumn('increment'),

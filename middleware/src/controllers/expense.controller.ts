@@ -10,7 +10,7 @@ export class ExpenseController{
     }
 
     @Get("/all")
-    public getAll():Promise<ExpenseEntity[]>{
+    public getAll(){
         return this.expenseService.getAll();
     }
 

@@ -47,7 +47,7 @@ __decorate([
     common_1.Get("/all"),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
-    __metadata("design:returntype", Promise)
+    __metadata("design:returntype", void 0)
 ], ExpenseController.prototype, "getAll", null);
 __decorate([
     common_1.Get("/date/:requestDate"),

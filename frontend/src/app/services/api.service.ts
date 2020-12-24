@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import * as environment from '../../environments/environment';
 import { Observable } from 'rxjs';
 import { ExpenseInterface } from '../model/Expense';
@@ -15,7 +15,8 @@ export class ApiService {
 
   public getExpenses():Observable<ExpenseInterface[]>{
 
-    return this.httpClient.get<ExpenseInterface[]>(environment.environment.api + "expenses/all")
+    return this.httpClient.get<ExpenseInterface[]>(environment.environment.api + "expenses/all",
+    {headers: new HttpHeaders({"Content-Type": "application/json"})})
   }
       
 }

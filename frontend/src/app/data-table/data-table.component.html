@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
     <table id="data">
         <th *ngFor ="let column of data['table_headers']">
             {{column}}
@@ -9,5 +9,26 @@
             </td>    
         </tr>
     
+    </table>
+</div> -->
+
+
+<div>
+
+    <table id="data">
+        <th *ngFor ="let column of tableHeaders">
+            {{column}}
+        </th>
+
+        <ng-template let-expense ngFor [ngForOf]="expensesList">
+            <tr>
+              <td>{{expense.expenseId}}</td>
+              <td>{{expense.expenseAmount}}</td>
+              <td>{{expense.expenseDescription}}</td>
+              <td>{{expense.expenseDate}}</td>
+      
+            </tr>
+          </ng-template>
+
     </table>
 </div>

@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import {HighchartsChartModule} from 'highcharts-angular'
 
@@ -15,6 +16,7 @@ import { HighchartsComponent } from './highcharts/highcharts.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     HighchartsChartModule
   ],
   providers: [],

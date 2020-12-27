@@ -18,5 +18,14 @@ export class ApiService {
     return this.httpClient.get<ExpenseInterface[]>(environment.environment.api + "expenses/all",
     {headers: new HttpHeaders({"Content-Type": "application/json"})})
   }
+
+  public addExpense(data:any){
+
+    this.httpClient.post(environment.environment.api + "expenses/add_expense",data).subscribe(response => console.log("response", response));
+  }
+
+  public addCustomExpense(amount:number,description:string,date:Date){
+    this.httpClient.post(environment.environment.api + "expenses/add_expense" + "/" + description + "/" + amount + "/" + date,"").subscribe(response => console.log("res",response));
+  }
       
 }

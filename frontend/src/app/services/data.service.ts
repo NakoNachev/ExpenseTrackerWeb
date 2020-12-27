@@ -21,7 +21,7 @@ export class DataService {
     },        
     title: "Expenses",
     xAxis: {
-        categories: ["january"]
+        categories: ["january","feb","march"]
     },
     yAxis: {
         title: {

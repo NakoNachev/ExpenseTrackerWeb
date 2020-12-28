@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ExpenseInterface } from '../model/Expense';
 import { ExpenseEntity } from '../model/ExpenseEntity';
 import { ExpenseInputForm } from '../model/ExpenseInputForm';
@@ -12,6 +12,8 @@ import { ApiService } from '../services/api.service';
 export class ExpenseInputComponent implements OnInit {
 
   public expenseInputForm = new ExpenseInputForm(20,"description",new Date("12.10.2020"));
+  @Input() badgeCounter:any;
+  @Output() countChanged: EventEmitter<number> =   new EventEmitter();
 
   constructor(private apiService:ApiService) { }
 
@@ -33,8 +35,12 @@ export class ExpenseInputComponent implements OnInit {
     console.log("formsData", this.expenseInputForm);
     // this.apiService.addExpense(formData);
     this.apiService.addExpense(expenseEntity);
+    this.badgeCounter += 1;
+    this.countChanged.emit(this.badgeCounter);
+    console.log("this.badgecounter", this.badgeCounter);
 
     this.ngOnInit();
+    //location.reload();
     //this.apiService.addCustomExpense(expenseEntity.expenseAmount, expenseEntity.expenseDescription, expenseEntity.expenseDate);
   }
 

@@ -14,8 +14,8 @@ const app_service_1 = require("./app.service");
 const expense_controller_1 = require("./controllers/expense.controller");
 const database_connection_service_1 = require("./database-connection.service");
 const expense_entity_1 = require("./entities/expense.entity");
+const expensetype_entity_1 = require("./entities/expensetype.entity");
 const expense_service_1 = require("./services/expense.service");
-const stopwatch_service_1 = require("./services/stopwatch-service");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -23,9 +23,9 @@ AppModule = __decorate([
         imports: [typeorm_1.TypeOrmModule.forRootAsync({
                 useClass: database_connection_service_1.DatabaseConnectionService
             }),
-            typeorm_1.TypeOrmModule.forFeature([expense_entity_1.ExpenseEntity])],
+            typeorm_1.TypeOrmModule.forFeature([expense_entity_1.ExpenseEntity, expensetype_entity_1.ExpenseTypeEntity])],
         controllers: [app_controller_1.AppController, expense_controller_1.ExpenseController],
-        providers: [app_service_1.AppService, expense_service_1.ExpenseService, stopwatch_service_1.StopwatchService],
+        providers: [app_service_1.AppService, expense_service_1.ExpenseService],
     })
 ], AppModule);
 exports.AppModule = AppModule;

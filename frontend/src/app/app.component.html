@@ -19,11 +19,14 @@ Inside app.component.html
 
 <mat-tab-group animationDuration="0">
 <mat-tab label="Add Expense">
-  <app-expense-input></app-expense-input> 
+  <app-expense-input [badgeCounter] = "badgeCounter" (countChanged)="countChangedHandler($event)"></app-expense-input> 
 </mat-tab>
 
-<mat-tab label = "Datatable">
-  <app-data-table></app-data-table>
+<mat-tab >
+  <ng-template mat-tab-label>
+    <span matBadge={{badgeCounter}} matBadgeOverlap="false" matBadgeColor="accent">Datatable</span>
+  </ng-template>
+  <app-data-table [expensesList] = "expensesList" ></app-data-table>
 </mat-tab>
 
 <mat-tab label = "Chart">

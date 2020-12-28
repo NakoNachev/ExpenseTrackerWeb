@@ -10,12 +10,9 @@ import { ApiService } from './services/api.service';
 })
 export class AppComponent implements OnInit {
 
-  //public data:any;
-
-  // @Input()
-  // data$: Observable<any>;
 
   public expensesList = [];
+  public badgeCounter = 0;
 
   constructor(private apiService: ApiService){
     // this.data$ = this.apiService.getExpenses();
@@ -26,6 +23,11 @@ export class AppComponent implements OnInit {
         .subscribe(data => this.expensesList = data);
 
     console.log("expenseList", this.expensesList);
+
 }
+
+  public countChangedHandler(count: number){
+    this.badgeCounter += 1;
+  }
   
 }

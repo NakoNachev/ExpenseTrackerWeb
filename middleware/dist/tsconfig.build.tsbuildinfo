@@ -2526,29 +2526,9 @@
         "signature": "9f431a6900d36657fd7a5f7e4e54e1e3773f227515eb1ee915ff2aa012882d75",
         "affectsGlobalScope": false
       },
-      "../node_modules/stopwatch-node/dist/taskinfo.d.ts": {
-        "version": "7c921e95bb753defbe12e8d3b29a87d8509175de45813fa330bfa209c6fcc121",
-        "signature": "7c921e95bb753defbe12e8d3b29a87d8509175de45813fa330bfa209c6fcc121",
-        "affectsGlobalScope": false
-      },
-      "../node_modules/stopwatch-node/dist/stopwatch.d.ts": {
-        "version": "74077e5bbb772b05fa52643a184f17a60bbda1db7ab853d45f19ffd20ad8d361",
-        "signature": "74077e5bbb772b05fa52643a184f17a60bbda1db7ab853d45f19ffd20ad8d361",
-        "affectsGlobalScope": false
-      },
-      "../node_modules/stopwatch-node/dist/index.d.ts": {
-        "version": "e444bc48e57ede2d4d438063efe338a50d636cb9730a62d5c01edb24668220e1",
-        "signature": "e444bc48e57ede2d4d438063efe338a50d636cb9730a62d5c01edb24668220e1",
-        "affectsGlobalScope": false
-      },
-      "../src/services/stopwatch-service.ts": {
-        "version": "1112f0983430c5074a6c7cb38ab48b370c7fcfcb5988e2849ae50d41b3a41021",
-        "signature": "d187f0d1e5ebc5a17ebada4be84021e5d8b7be4cf642ba1dc5282b6eba7ec292",
-        "affectsGlobalScope": false
-      },
       "../src/app.controller.ts": {
-        "version": "65259cf96feb886ea6acb9ab445862223f2c875cad393840e1c4eaae2b8d8e8d",
-        "signature": "94a0e06d3994556d073a4bff91397f7c68c376a6301c292e9413c5021bfc44f2",
+        "version": "df48d798fc59112fdd9582702947f47b6ceaa630790e6ba9e0f95dfa8c64e967",
+        "signature": "6cde8a51175592cb3a59a6077dbb6657f1cbf2f8721588c52c577cf5e29321b7",
         "affectsGlobalScope": false
       },
       "../node_modules/@nestjs/swagger/dist/decorators/api-basic.decorator.d.ts": {
@@ -2746,8 +2726,13 @@
         "signature": "7d4a7468925e85311b37f5a8e7fc88fe6577407ca8f4f688598891fef89d8160",
         "affectsGlobalScope": false
       },
+      "../src/entities/expensetype.entity.ts": {
+        "version": "adc3eae02615381ec80379df5d2a2724f86f2bcfcdc18da7725c9f1fc52e3d4a",
+        "signature": "10589c018212a32abcae488d734ca91d36eca3fff3685b94eb8dc4bc1de7738a",
+        "affectsGlobalScope": false
+      },
       "../src/app.module.ts": {
-        "version": "e37c40ff1c1003305714e3619c514f9ac684729f03f5eb32b45a84216c3fa82c",
+        "version": "a157304cfe57dd8aa908c92ff3f1f20db45c8cc9ce64b29ab902f5f118fcf010",
         "signature": "9fc7f7b6ad854404973b8cba8e6d883f758237991968e9a3965d716d46f1da88",
         "affectsGlobalScope": false
       },
@@ -4906,12 +4891,6 @@
       "../node_modules/rxjs/internal/util/pipe.d.ts": [
         "../node_modules/rxjs/internal/types.d.ts"
       ],
-      "../node_modules/stopwatch-node/dist/index.d.ts": [
-        "../node_modules/stopwatch-node/dist/stopwatch.d.ts"
-      ],
-      "../node_modules/stopwatch-node/dist/stopwatch.d.ts": [
-        "../node_modules/stopwatch-node/dist/taskinfo.d.ts"
-      ],
       "../node_modules/typeorm/cache/queryresultcache.d.ts": [
         "../node_modules/typeorm/cache/queryresultcacheoptions.d.ts",
         "../node_modules/typeorm/query-runner/queryrunner.d.ts"
@@ -6001,8 +5980,7 @@
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/app.service.ts",
         "../src/entities/expense.entity.ts",
-        "../src/services/expense.service.ts",
-        "../src/services/stopwatch-service.ts"
+        "../src/services/expense.service.ts"
       ],
       "../src/app.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
@@ -6012,8 +5990,8 @@
         "../src/controllers/expense.controller.ts",
         "../src/database-connection.service.ts",
         "../src/entities/expense.entity.ts",
-        "../src/services/expense.service.ts",
-        "../src/services/stopwatch-service.ts"
+        "../src/entities/expensetype.entity.ts",
+        "../src/services/expense.service.ts"
       ],
       "../src/app.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts"
@@ -6031,6 +6009,9 @@
       "../src/entities/expense.entity.ts": [
         "../node_modules/typeorm/index.d.ts"
       ],
+      "../src/entities/expensetype.entity.ts": [
+        "../node_modules/typeorm/index.d.ts"
+      ],
       "../src/main.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/core/index.d.ts",
@@ -6042,10 +6023,6 @@
         "../node_modules/@nestjs/typeorm/index.d.ts",
         "../node_modules/typeorm/index.d.ts",
         "../src/entities/expense.entity.ts"
-      ],
-      "../src/services/stopwatch-service.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/stopwatch-node/dist/index.d.ts"
       ]
     },
     "exportedModulesMap": {
@@ -7458,12 +7435,6 @@
       "../node_modules/rxjs/internal/util/pipe.d.ts": [
         "../node_modules/rxjs/internal/types.d.ts"
       ],
-      "../node_modules/stopwatch-node/dist/index.d.ts": [
-        "../node_modules/stopwatch-node/dist/stopwatch.d.ts"
-      ],
-      "../node_modules/stopwatch-node/dist/stopwatch.d.ts": [
-        "../node_modules/stopwatch-node/dist/taskinfo.d.ts"
-      ],
       "../node_modules/typeorm/cache/queryresultcache.d.ts": [
         "../node_modules/typeorm/cache/queryresultcacheoptions.d.ts",
         "../node_modules/typeorm/query-runner/queryrunner.d.ts"
@@ -8552,8 +8523,7 @@
       "../src/app.controller.ts": [
         "../src/app.service.ts",
         "../src/entities/expense.entity.ts",
-        "../src/services/expense.service.ts",
-        "../src/services/stopwatch-service.ts"
+        "../src/services/expense.service.ts"
       ],
       "../src/controllers/expense.controller.ts": [
         "../src/entities/expense.entity.ts",
@@ -8962,9 +8932,6 @@
       "../node_modules/rxjs/internal/util/timeouterror.d.ts",
       "../node_modules/rxjs/internal/util/unsubscriptionerror.d.ts",
       "../node_modules/source-map/source-map.d.ts",
-      "../node_modules/stopwatch-node/dist/index.d.ts",
-      "../node_modules/stopwatch-node/dist/stopwatch.d.ts",
-      "../node_modules/stopwatch-node/dist/taskinfo.d.ts",
       "../node_modules/typeorm/cache/queryresultcache.d.ts",
       "../node_modules/typeorm/cache/queryresultcacheoptions.d.ts",
       "../node_modules/typeorm/common/deeppartial.d.ts",
@@ -9261,9 +9228,9 @@
       "../src/controllers/expense.controller.ts",
       "../src/database-connection.service.ts",
       "../src/entities/expense.entity.ts",
+      "../src/entities/expensetype.entity.ts",
       "../src/main.ts",
-      "../src/services/expense.service.ts",
-      "../src/services/stopwatch-service.ts"
+      "../src/services/expense.service.ts"
     ]
   },
   "version": "4.1.3"

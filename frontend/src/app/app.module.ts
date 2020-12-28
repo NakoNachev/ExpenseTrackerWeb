@@ -17,6 +17,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatIconModule} from '@angular/material/icon';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatBadgeModule} from '@angular/material/badge';
 
 
 @NgModule({
@@ -41,7 +42,7 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatDatepickerModule,
     MatIconModule,
     MatNativeDateModule,
-    MatTabsModule
+    MatTabsModule,MatBadgeModule
   ],
   providers: [MatDatepickerModule],
   bootstrap: [AppComponent]

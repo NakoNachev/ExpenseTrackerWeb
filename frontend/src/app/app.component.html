@@ -1,5 +1,5 @@
 Inside app.component.html
-<button mat-flat-button color="primary">Warn</button>
+<!-- <button mat-flat-button color="primary">Warn</button>
 <div id="slider"></div>
 <div class="container">
 
@@ -15,8 +15,26 @@ Inside app.component.html
       ></app-highcharts>
   </div>
 
-</div>
+</div> -->
 
+<mat-tab-group animationDuration="0">
+<mat-tab label="Add Expense">
+  <app-expense-input></app-expense-input> 
+</mat-tab>
+
+<mat-tab label = "Datatable">
+  <app-data-table></app-data-table>
+</mat-tab>
+
+<mat-tab label = "Chart">
+    
+  <ng-template matTabContent>
+    <!-- Use ng-template to lazy load the DOM of the component-->
+    <app-highcharts></app-highcharts>
+  </ng-template>
+</mat-tab>
+
+</mat-tab-group>
 
 
 <router-outlet></router-outlet>

@@ -1,6 +1,7 @@
 #data {
     border-collapse: collapse;
-    width:50%;
+    width:80%;
+    margin:auto;
 }
 
 #data td, #data th {

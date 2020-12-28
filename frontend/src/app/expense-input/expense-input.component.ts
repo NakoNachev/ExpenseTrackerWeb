@@ -11,7 +11,7 @@ import { ApiService } from '../services/api.service';
 })
 export class ExpenseInputComponent implements OnInit {
 
-  public expenseInputForm = new ExpenseInputForm(20,"",new Date("12.10.2020"));
+  public expenseInputForm = new ExpenseInputForm(20,"description",new Date("12.10.2020"));
 
   constructor(private apiService:ApiService) { }
 

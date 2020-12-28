@@ -2,7 +2,15 @@
 
 
     margin:auto;
-    border: 2px black solid;
-    width: 50%;
-    padding: 100px ;
+    padding: 50px ;
+}
+
+#button-submit {
+    float:right;
+}
+
+#top-label{
+    float:left;
+    padding-bottom: 20px;
+    font-size: large;
 }

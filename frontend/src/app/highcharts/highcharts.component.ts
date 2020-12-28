@@ -21,7 +21,7 @@ export class HighchartsComponent implements OnInit {
 
     this.chartOptions["series"].push({name:"test",data:[1,2,3]});
     console.log(this.chartOptions);
-    Highcharts.chart('container',this.chartOptions);
+    Highcharts.chart('chart',this.chartOptions);
   }
 
 }

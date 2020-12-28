@@ -1,9 +1,12 @@
 <div class="component-wrapper">
 
-    <h1> Add expense </h1>
+    <div id="top-label">
+        <mat-icon>payment</mat-icon>
+        Add Expense
+    </div> <br>
 
 
-    <form #inputForm = "ngForm" (ngSubmit) = "submitFormData()">
+    <!-- <form #inputForm = "ngForm" (ngSubmit) = "submitFormData()">
 
 
         <div class="form-group">
@@ -28,8 +31,35 @@
 
 
 
-    </form>
+    </form> -->
 
+    <form (ngSubmit) = "submitFormData()">
+        <mat-form-field>
+            <mat-label> Amount</mat-label>
+            <input matInput placeholder="Ex.400" name="amount" [(ngModel)] = "expenseInputForm.expenseAmount">
+            <button mat-button *ngIf="expenseInputForm.expenseAmount" matSuffix mat-icon-button aria-label="Clear" (click)="expenseInputForm.expenseAmount=''">
+                <mat-icon>delete</mat-icon>
+              </button>
+        </mat-form-field> <br>
+
+        <mat-form-field>
+            <mat-label> Description</mat-label>
+            <input matInput placeholder="Ex. Shopping" name="description" [(ngModel)] = "expenseInputForm.expenseDescription">
+            <button mat-button *ngIf="expenseInputForm.expenseDescription" matSuffix mat-icon-button aria-label="Clear" (click)="expenseInputForm.expenseDescription=''">
+                <mat-icon>delete</mat-icon>
+              </button>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="picker2" name="date" [(ngModel)] = "expenseInputForm.expenseDate">
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2 color="warn"></mat-datepicker>
+        </mat-form-field> <br>
+
+        <button mat-raised-button color="primary" id="button-submit" type="submit" >Submit</button>
+
+    </form>
 
 
 

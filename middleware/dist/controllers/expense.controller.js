@@ -33,6 +33,7 @@ let ExpenseController = class ExpenseController {
         return this.expenseService.getByDescription(description).getMany();
     }
     addNewExpense(expenseEntity) {
+        console.log("post called");
         return this.expenseService.addExpenseObject(expenseEntity);
     }
     addCustomNewExpense(description, amount, date) {

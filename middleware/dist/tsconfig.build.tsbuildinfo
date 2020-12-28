@@ -2737,7 +2737,7 @@
         "affectsGlobalScope": false
       },
       "../src/controllers/expense.controller.ts": {
-        "version": "cd517ca52b53ecc67b5514a278989847562023af745a8c842a88a8cb8a351dfc",
+        "version": "0b685f9bf3ef23fbdcc885843911aeb924d1d8fda7612f48670470f46b1981f8",
         "signature": "3f55e8990d8d6d8f0932aad793272c208f03430e64418aefd7506825db2b2949",
         "affectsGlobalScope": false
       },

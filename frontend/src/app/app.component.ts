@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ApiService } from './services/api.service';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

@@ -32,6 +32,7 @@ export class ExpenseController{
     /** Add already prepared expense */
     @Post("add_expense")
     public addNewExpense(@Body() expenseEntity: ExpenseEntity){
+        console.log("post called");
         return this.expenseService.addExpenseObject(expenseEntity);
     }
 

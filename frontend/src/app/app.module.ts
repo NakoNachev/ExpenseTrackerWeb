@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, HammerModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import {HighchartsChartModule} from 'highcharts-angular'
@@ -8,6 +8,9 @@ import { DataTableComponent } from './data-table/data-table.component';
 import { HighchartsComponent } from './highcharts/highcharts.component';
 import { ExpenseInputComponent } from './expense-input/expense-input.component';
 import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,11 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     HttpClientModule,
     HighchartsChartModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    HammerModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

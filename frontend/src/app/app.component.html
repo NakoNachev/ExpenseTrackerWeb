@@ -1,14 +1,24 @@
 Inside app.component.html
+<button mat-flat-button color="primary">Warn</button>
+<div id="slider"></div>
+<div class="container">
 
-<div> 
-  <app-data-table></app-data-table>
-    
+  <div class="left-panel">
+    <app-data-table></app-data-table>
+    <app-expense-input></app-expense-input> 
+
+  </div>
+
+
+  <div class="right-panel">
     <app-highcharts 
-    ></app-highcharts>
-
-
+      ></app-highcharts>
+  </div>
 
 </div>
 
-<app-expense-input></app-expense-input>
+
+
+<router-outlet></router-outlet>
+
 

@@ -1,0 +1,21 @@
+.left-panel {
+
+    float:left;
+    width:60%;
+    margin:auto;
+
+}
+
+.right-panel {
+
+    width:40%;
+    float:left
+    
+}
+
+.container {
+}
+
+#slider {
+    width:300px;
+}

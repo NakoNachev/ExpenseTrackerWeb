@@ -1,24 +1,7 @@
 Inside app.component.html
-<!-- <button mat-flat-button color="primary">Warn</button>
-<div id="slider"></div>
-<div class="container">
 
-  <div class="left-panel">
-    <app-data-table></app-data-table>
-    <app-expense-input></app-expense-input> 
-
-  </div>
-
-
-  <div class="right-panel">
-    <app-highcharts 
-      ></app-highcharts>
-  </div>
-
-</div> -->
-
-<mat-tab-group animationDuration="0">
-<mat-tab label="Add Expense">
+<mat-tab-group animationDuration="0" (selectedTabChange)="onTabChanged($event)">
+<mat-tab label="Add Expense" routerLink="/input">
   <app-expense-input [badgeCounter] = "badgeCounter" (countChanged)="countChangedHandler($event)"></app-expense-input> 
 </mat-tab>
 
@@ -26,7 +9,11 @@ Inside app.component.html
   <ng-template mat-tab-label>
     <span matBadge={{badgeCounter}} matBadgeOverlap="false" matBadgeColor="accent">Datatable</span>
   </ng-template>
-  <app-data-table [expensesList] = "expensesList" ></app-data-table>
+  <ng-template matTabContent>
+  <app-data-table [expensesList] = "expensesList" [badgeCounter] = "badgeCounter" 
+  (countChanged)="countChangedHandler($event)"
+  (countReset)="countResetHandler($event)"></app-data-table>
+</ng-template>
 </mat-tab>
 
 <mat-tab label = "Chart">
@@ -38,7 +25,6 @@ Inside app.component.html
 </mat-tab>
 
 </mat-tab-group>
-
 
 <router-outlet></router-outlet>
 

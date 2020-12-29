@@ -1,16 +1,28 @@
 .component-wrapper {
 
-
-    margin:auto;
-    padding: 50px ;
+    margin-top:5%;
+    margin-bottom: 25%;
+    margin-left:25%;
+    margin-right:25%;
+    width:50%;
+    padding-top: 50px;
 }
+
 
 #button-submit {
     float:right;
 }
 
 #top-label{
-    float:left;
-    padding-bottom: 20px;
     font-size: large;
+    width:50%;
+    padding-left: 30%;
+}
+
+#input-form{
+    margin-left: 25%;
+    margin-right:25%;
+    width: 50%;
+    padding-left:10%;
+    
 }

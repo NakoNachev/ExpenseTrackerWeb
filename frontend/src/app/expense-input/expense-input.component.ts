@@ -11,7 +11,7 @@ import { ApiService } from '../services/api.service';
 })
 export class ExpenseInputComponent implements OnInit {
 
-  public expenseInputForm = new ExpenseInputForm(20,"description",new Date("12.10.2020"));
+  public expenseInputForm = new ExpenseInputForm(20,"",new Date("12.10.2020"));
   @Input() badgeCounter:any;
   @Output() countChanged: EventEmitter<number> =   new EventEmitter();
 
@@ -38,9 +38,8 @@ export class ExpenseInputComponent implements OnInit {
     this.badgeCounter += 1;
     this.countChanged.emit(this.badgeCounter);
     console.log("this.badgecounter", this.badgeCounter);
-
     this.ngOnInit();
-    //location.reload();
+    
     //this.apiService.addCustomExpense(expenseEntity.expenseAmount, expenseEntity.expenseDescription, expenseEntity.expenseDate);
   }
 

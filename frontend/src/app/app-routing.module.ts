@@ -7,15 +7,16 @@ import { AppComponent } from './app.component';
 
 const routes: Routes = [
   //{path: '', component: AppComponent},
+  {path: '', redirectTo: '/input', pathMatch: 'full'},
   {path: "input", component: ExpenseInputComponent},
-  {path: 'datatable', component: DataTableComponent}
+  {path: "datatable", component: DataTableComponent}
 ]
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    [RouterModule.forRoot(routes)]
+    [RouterModule.forRoot(routes,{onSameUrlNavigation: 'reload'})]
   ],
   exports: [RouterModule]
 })

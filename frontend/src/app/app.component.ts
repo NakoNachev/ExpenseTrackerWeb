@@ -27,11 +27,8 @@ export class AppComponent implements OnInit {
   }
   ngOnInit(){
 
-    this.apiService.getExpenses()
-        .subscribe(data => this.expensesList = data);
-
-    console.log("expenseList", this.expensesList);
-
+    // this.apiService.getExpenses()
+    //     .subscribe(data => this.expensesList = data);
 }
 
   public countChangedHandler(count: number){
@@ -46,7 +43,7 @@ export class AppComponent implements OnInit {
   {
     if(event.index == 0)
     {
-        this.expenseInputComponent.ngOnInit();//Or whatever name the method is called
+        this.expenseInputComponent.ngOnInit();
     }
     if(event.index == 1)
     {

@@ -1,11 +1,23 @@
 Inside app.component.html
 
+<!-- <ng-template matTabContent>
+<app-data-table [expensesList] = "expensesList" [badgeCounter] = "badgeCounter" 
+(countChanged)="countChangedHandler($event)"
+(countReset)="countResetHandler($event)"></app-data-table>
+</ng-template>
+
+<nav mat-tab-nav-bar [backgroundColor]="background">
+  <a mat-tab-link routerLink ="/input"> Input</a>
+  <a mat-tab-link routerLink ="/datatable">Datatable</a>
+  <a mat-tab-link routerLink="/chart">Chart</a>
+</nav> -->
+
 <mat-tab-group animationDuration="0" (selectedTabChange)="onTabChanged($event)">
 <mat-tab label="Add Expense" routerLink="/input">
   <app-expense-input [badgeCounter] = "badgeCounter" (countChanged)="countChangedHandler($event)"></app-expense-input> 
 </mat-tab>
 
-<mat-tab >
+<mat-tab routerLink="/datatable">
   <ng-template mat-tab-label>
     <span matBadge={{badgeCounter}} matBadgeOverlap="false" matBadgeColor="accent">Datatable</span>
   </ng-template>
@@ -19,12 +31,13 @@ Inside app.component.html
 <mat-tab label = "Chart">
     
   <ng-template matTabContent>
-    <!-- Use ng-template to lazy load the DOM of the component-->
     <app-highcharts></app-highcharts>
   </ng-template>
 </mat-tab>
 
 </mat-tab-group>
+
+
 
 <router-outlet></router-outlet>
 

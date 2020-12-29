@@ -21,26 +21,24 @@ export class ExpenseInputComponent implements OnInit {
   }
 
   public submitFormData(){
-    // let formData:any = new FormData();
-    // formData.append("expenseAmount", this.expenseInputForm.expenseAmount);
-    // formData.append("expenseDescription", this.expenseInputForm.expenseDescription);
-    // formData.append("expenseDate", this.expenseInputForm.expenseDate);
+
     console.log("inside submitFormData")
+
     let expenseEntity:ExpenseEntity = new ExpenseEntity();
     console.log(this.expenseInputForm.expenseAmount);
+    
     expenseEntity.setExpenseAmount = this.expenseInputForm.expenseAmount;
     expenseEntity.setExpenseDescription = this.expenseInputForm.expenseDescription;
     expenseEntity.setExpenseDate = this.expenseInputForm.expenseDate;
 
     console.log("formsData", this.expenseInputForm);
-    // this.apiService.addExpense(formData);
+
     this.apiService.addExpense(expenseEntity);
     this.badgeCounter += 1;
     this.countChanged.emit(this.badgeCounter);
     console.log("this.badgecounter", this.badgeCounter);
     this.ngOnInit();
     
-    //this.apiService.addCustomExpense(expenseEntity.expenseAmount, expenseEntity.expenseDescription, expenseEntity.expenseDate);
   }
 
 }

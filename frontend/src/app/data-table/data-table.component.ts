@@ -1,4 +1,8 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
+import { ExpenseInterface } from '../model/Expense';
 import { ApiService } from '../services/api.service';
 import { DataService } from '../services/data.service';
 
@@ -9,27 +13,30 @@ import { DataService } from '../services/data.service';
 })
 export class DataTableComponent implements OnInit {
 
-  data:any;
   @Input() public expensesList;
   @Input() public badgeCounter:any;
-  //@Output() countChanged: EventEmitter<number> =   new EventEmitter();
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
   @Output() countReset: EventEmitter<number> =   new EventEmitter();
-  public tableHeaders = ["ID","Amount","Description","Date"];
 
-  constructor(private dataService: DataService,
-              private apiService: ApiService) { }
+  public tableHeaders:string[] = [];
+  dataSource: MatTableDataSource<ExpenseInterface>;
+
+  constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
 
-    this.data = this.dataService.fetchData();
-    console.log(this.data["series"]);
-    
-    //this.countChanged.emit(this.badgeCounter);
-    
-    //location.reload();
+    this.tableHeaders = ["expenseId","expenseAmount","expenseDescription","expenseDate"];
 
-    // this.apiService.getExpenses()
-    //     .subscribe(data => this.expensesList = data);
+    // api calls to the database to fetch the data for the datatable
+    this.apiService.getExpenses()
+        .subscribe(data => {
+
+           this.dataSource = new MatTableDataSource(data)
+           this.dataSource.paginator = this.paginator;
+           this.dataSource.sort = this.sort;}
+
+           );
   }
 
   public emit(){
@@ -39,6 +46,17 @@ export class DataTableComponent implements OnInit {
 
   public reload(){
     location.reload();
+  }
+
+  /** Used for filtering the page */
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.dataSource.paginator) {
+      console.log("paginator true")
+      this.dataSource.paginator.firstPage();
+    }
   }
 
 }

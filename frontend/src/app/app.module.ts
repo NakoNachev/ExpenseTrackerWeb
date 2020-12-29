@@ -18,6 +18,9 @@ import {MatIconModule} from '@angular/material/icon';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatBadgeModule} from '@angular/material/badge';
+import {MatTableModule} from '@angular/material/table'
+import { MatSortModule } from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 @NgModule({
@@ -42,7 +45,10 @@ import {MatBadgeModule} from '@angular/material/badge';
     MatDatepickerModule,
     MatIconModule,
     MatNativeDateModule,
-    MatTabsModule,MatBadgeModule
+    MatTabsModule,MatBadgeModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule
   ],
   providers: [MatDatepickerModule],
   bootstrap: [AppComponent]

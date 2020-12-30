@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post } from "@nestjs/common";
+import { Body, Controller, Delete, Get, Param, Post } from "@nestjs/common";
 import { ApiBody } from "@nestjs/swagger";
 import { ExpenseEntity } from "src/entities/expense.entity";
 import { ExpenseService } from "src/services/expense.service";
@@ -48,5 +48,14 @@ export class ExpenseController{
         customExpenseEntity.setExpenseDate = date;
 
         return this.expenseService.addExpenseObject(customExpenseEntity);
+    }
+
+    @Delete("delete_expense/:id")
+    public async deleteExpense(@Param('id') id:string){
+        console.log("delete called inside controller");
+
+        let targetEntity:any = await this.expenseService.getByIdSingle(id);
+
+        this.expenseService.deleteExpenseObjekt(targetEntity);
     }
 }

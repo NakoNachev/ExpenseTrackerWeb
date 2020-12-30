@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { ExpenseTypeController } from './controllers/expense-type.controller';
 import { ExpenseController } from './controllers/expense.controller';
 import { DatabaseConnectionService } from './database-connection.service';
 import { ExpenseEntity } from './entities/expense.entity';
@@ -13,7 +14,7 @@ import { ExpenseService } from './services/expense.service';
     useClass: DatabaseConnectionService 
   }),
           TypeOrmModule.forFeature([ExpenseEntity,ExpenseTypeEntity])],
-  controllers: [AppController,ExpenseController],
+  controllers: [AppController,ExpenseController,ExpenseTypeController],
   providers: [AppService,ExpenseService],
 })
 export class AppModule {}

@@ -9,4 +9,5 @@ export declare class ExpenseController {
     getByDescription(description: string): Promise<ExpenseEntity[]>;
     addNewExpense(expenseEntity: ExpenseEntity): void;
     addCustomNewExpense(description: string, amount: number, date: Date): void;
+    deleteExpense(id: string): Promise<void>;
 }

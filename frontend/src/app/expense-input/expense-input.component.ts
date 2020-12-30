@@ -14,10 +14,15 @@ export class ExpenseInputComponent implements OnInit {
   public expenseInputForm = new ExpenseInputForm(20,"",new Date("12.10.2020"));
   @Input() badgeCounter:any;
   @Output() countChanged: EventEmitter<number> =   new EventEmitter();
+  public expenseTypes:any;
+  public selectedValue: any;
 
   constructor(private apiService:ApiService) { }
 
   ngOnInit(): void {
+
+    this.apiService.getExpenseTypes().subscribe(data =>
+      this.expenseTypes = data);
   }
 
   public submitFormData(){
@@ -26,7 +31,7 @@ export class ExpenseInputComponent implements OnInit {
 
     let expenseEntity:ExpenseEntity = new ExpenseEntity();
     console.log(this.expenseInputForm.expenseAmount);
-    
+
     expenseEntity.setExpenseAmount = this.expenseInputForm.expenseAmount;
     expenseEntity.setExpenseDescription = this.expenseInputForm.expenseDescription;
     expenseEntity.setExpenseDate = this.expenseInputForm.expenseDate;

@@ -11,6 +11,7 @@ const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
+const expense_type_controller_1 = require("./controllers/expense-type.controller");
 const expense_controller_1 = require("./controllers/expense.controller");
 const database_connection_service_1 = require("./database-connection.service");
 const expense_entity_1 = require("./entities/expense.entity");
@@ -24,7 +25,7 @@ AppModule = __decorate([
                 useClass: database_connection_service_1.DatabaseConnectionService
             }),
             typeorm_1.TypeOrmModule.forFeature([expense_entity_1.ExpenseEntity, expensetype_entity_1.ExpenseTypeEntity])],
-        controllers: [app_controller_1.AppController, expense_controller_1.ExpenseController],
+        controllers: [app_controller_1.AppController, expense_controller_1.ExpenseController, expense_type_controller_1.ExpenseTypeController],
         providers: [app_service_1.AppService, expense_service_1.ExpenseService],
     })
 ], AppModule);

@@ -27,5 +27,14 @@ export class ApiService {
   public addCustomExpense(amount:number,description:string,date:Date){
     this.httpClient.post(environment.environment.api + "expenses/add_expense" + "/" + description + "/" + amount + "/" + date,"").subscribe(response => console.log("res",response));
   }
+
+  public deleteExpense(expenseId:string){
+    console.log(environment.environment.api + "expenses/delete_expense" + "/" + expenseId);
+    this.httpClient.delete(environment.environment.api + "expenses/delete_expense" + "/" + expenseId).subscribe(data => console.log("data", data));
+  }
+
+  public getExpenseTypes(){
+    return this.httpClient.get(environment.environment.api + "expense_type/all");
+  }
       
 }

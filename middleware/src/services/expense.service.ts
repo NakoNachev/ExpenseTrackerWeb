@@ -1,6 +1,7 @@
 import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { ExpenseEntity } from "src/entities/expense.entity";
+import { ExpenseTypeEntity } from "src/entities/expensetype.entity";
 import { Repository } from "typeorm";
 
 
@@ -10,7 +11,9 @@ export class ExpenseService {
 
     constructor(
         @InjectRepository(ExpenseEntity)
-        private expenseRepository: Repository<ExpenseEntity>
+        private expenseRepository: Repository<ExpenseEntity>,
+        @InjectRepository(ExpenseTypeEntity)
+        private expenseTypeRepository: Repository<ExpenseTypeEntity>
     ){}
 
     public getAll(){
@@ -22,6 +25,10 @@ export class ExpenseService {
         return this.expenseRepository.createQueryBuilder()
         .where("expense.date = :date", {date: requestDate});
 
+    }
+
+    public getByIdSingle(id:string){
+        return this.expenseRepository.findOne(id);
     }
 
     public getById(id: any[]){
@@ -43,5 +50,27 @@ export class ExpenseService {
         this.expenseRepository.save(expenseEntity);
         //
     }
+
+    public async deleteExpenseObjekt(expenseEntity: ExpenseEntity){
+        console.log("service called");
+        await this.expenseRepository.delete(expenseEntity.getExpenseId);
+    }
+
+
+    // --------------------- Expense Types methods -------------------
+
+    public getAlltypes(){
+        return this.expenseTypeRepository.find();
+    }
+
+    public getTypeById(id:any[]){
+        return this.expenseTypeRepository.findByIds(id);
+    }
+
+    public addExpenseType(expenseTypeEntity:ExpenseTypeEntity){
+        this.expenseTypeRepository.save(expenseTypeEntity);
+    }
+
+
 
 }

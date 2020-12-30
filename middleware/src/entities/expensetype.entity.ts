@@ -9,7 +9,6 @@ export class ExpenseTypeEntity{
     @Column({name:"expense_type_description"})
     private expenseTypeDescription:string
 
-
     public set setExpenseTypeDescription(description:string){
         this.expenseTypeDescription = description; 
     }

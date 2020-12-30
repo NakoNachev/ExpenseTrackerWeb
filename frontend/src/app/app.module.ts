@@ -21,6 +21,8 @@ import {MatBadgeModule} from '@angular/material/badge';
 import {MatTableModule} from '@angular/material/table'
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { EditDialogComponent } from './data-table/edit-dialog/edit-dialog.component';
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
@@ -29,6 +31,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     DataTableComponent,
     HighchartsComponent,
     ExpenseInputComponent,
+    EditDialogComponent,
     
   ],
   imports: [
@@ -48,7 +51,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatTabsModule,MatBadgeModule,
     MatTableModule,
     MatSortModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSelectModule
   ],
   providers: [MatDatepickerModule],
   bootstrap: [AppComponent]

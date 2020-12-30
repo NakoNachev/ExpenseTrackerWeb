@@ -43,6 +43,11 @@ let ExpenseController = class ExpenseController {
         customExpenseEntity.setExpenseDate = date;
         return this.expenseService.addExpenseObject(customExpenseEntity);
     }
+    async deleteExpense(id) {
+        console.log("delete called inside controller");
+        let targetEntity = await this.expenseService.getByIdSingle(id);
+        this.expenseService.deleteExpenseObjekt(targetEntity);
+    }
 };
 __decorate([
     common_1.Get("/all"),
@@ -87,6 +92,13 @@ __decorate([
     __metadata("design:paramtypes", [String, Number, Date]),
     __metadata("design:returntype", void 0)
 ], ExpenseController.prototype, "addCustomNewExpense", null);
+__decorate([
+    common_1.Delete("delete_expense/:id"),
+    __param(0, common_1.Param('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Promise)
+], ExpenseController.prototype, "deleteExpense", null);
 ExpenseController = __decorate([
     common_1.Controller("/expenses"),
     __metadata("design:paramtypes", [expense_service_1.ExpenseService])

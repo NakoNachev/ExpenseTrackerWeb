@@ -26,9 +26,6 @@ export class AppComponent implements OnInit {
     // this.data$ = this.apiService.getExpenses();
   }
   ngOnInit(){
-
-    // this.apiService.getExpenses()
-    //     .subscribe(data => this.expensesList = data);
 }
 
   public countChangedHandler(count: number){

@@ -30,6 +30,15 @@
                 <mat-datepicker #picker2 color="warn"></mat-datepicker>
             </mat-form-field> <br><br>
 
+            <mat-form-field>
+                <mat-label>Choose an expense type</mat-label>
+                <mat-select matNativeControl [(ngModel)]="selectedValue" name="type">
+                    <mat-option *ngFor="let type of expenseTypes" [value]="type.expenseTypeDescription">
+                        {{type.expenseTypeDescription}}
+                      </mat-option>
+                </mat-select>
+            </mat-form-field>
+
             <button mat-raised-button color="primary" id="button-submit" type="submit" >Submit</button>
 
         </form>

@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { ExpenseTypeEntity } from "./expensetype.entity";
 
 @Entity("expense")
 export class ExpenseEntity {
@@ -15,6 +16,13 @@ export class ExpenseEntity {
     @Column({name: "expense_date", type:"date"})
     private expenseDate: Date;
 
+    @OneToOne(type => ExpenseTypeEntity)
+    @JoinColumn()
+    private expenseTypeEntity: ExpenseEntity;
+
+    @Column({name: "expenseTypeId", nullable: true})
+    private expenseTypeId: string;
+
     public set setExpenseDescription(description:string){
         this.expenseDescription = description;
     }
@@ -25,6 +33,10 @@ export class ExpenseEntity {
 
     public set setExpenseDate(date:Date){
         this.expenseDate = date;
+    }
+
+    public get getExpenseId():string { 
+        return this.expenseId;
     }
 
 }

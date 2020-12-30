@@ -18,7 +18,7 @@ let DatabaseConnectionService = class DatabaseConnectionService {
             username: process.env.DATABASE_USER,
             password: process.env.DATABASE_PASSWORD,
             database: process.env.DATABASE_DB,
-            synchronize: false,
+            synchronize: true,
             dropSchema: false,
             logging: true,
             entities: ['dist/**/*.entity.js']

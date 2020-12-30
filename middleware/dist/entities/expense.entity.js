@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ExpenseEntity = void 0;
 const typeorm_1 = require("typeorm");
+const expensetype_entity_1 = require("./expensetype.entity");
 let ExpenseEntity = class ExpenseEntity {
     set setExpenseDescription(description) {
         this.expenseDescription = description;
@@ -20,6 +21,9 @@ let ExpenseEntity = class ExpenseEntity {
     }
     set setExpenseDate(date) {
         this.expenseDate = date;
+    }
+    get getExpenseId() {
+        return this.expenseId;
     }
 };
 __decorate([
@@ -38,6 +42,15 @@ __decorate([
     typeorm_1.Column({ name: "expense_date", type: "date" }),
     __metadata("design:type", Date)
 ], ExpenseEntity.prototype, "expenseDate", void 0);
+__decorate([
+    typeorm_1.OneToOne(type => expensetype_entity_1.ExpenseTypeEntity),
+    typeorm_1.JoinColumn(),
+    __metadata("design:type", ExpenseEntity)
+], ExpenseEntity.prototype, "expenseTypeEntity", void 0);
+__decorate([
+    typeorm_1.Column({ name: "expenseTypeId", nullable: true }),
+    __metadata("design:type", String)
+], ExpenseEntity.prototype, "expenseTypeId", void 0);
 ExpenseEntity = __decorate([
     typeorm_1.Entity("expense")
 ], ExpenseEntity);

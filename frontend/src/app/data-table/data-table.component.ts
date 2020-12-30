@@ -26,7 +26,7 @@ export class DataTableComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.tableHeaders = ["expenseId","expenseAmount","expenseDescription","expenseDate"];
+    this.tableHeaders = ["expenseId","expenseAmount","expenseDescription","expenseDate","test"];
 
     // api calls to the database to fetch the data for the datatable
     this.apiService.getExpenses()
@@ -57,6 +57,14 @@ export class DataTableComponent implements OnInit {
       console.log("paginator true")
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  public deleteExpense(expenseId: string){
+    console.log("deleteExpense called inside component");
+    console.log("expenseId", expenseId);
+    this.apiService.deleteExpense(expenseId);
+    //this.ngOnInit();
+    
   }
 
 }

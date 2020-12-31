@@ -2527,8 +2527,8 @@
         "affectsGlobalScope": false
       },
       "../src/services/expense.service.ts": {
-        "version": "c73a857c5de620cf6f3f247003b83d81a0933bcc0c42ce6c50ad33e7de4f7b49",
-        "signature": "80523e7eaf478f3373e8c2d44a4a1d0b210502a7aa965e5a009a15b92c536a9d",
+        "version": "c969c22bfd67364e15097563ab43dc9b1ac72e6b2b93d7713ec34f7bd2629b05",
+        "signature": "0b10217020ae1110c91dc0b1d822443d77dc3f34f9470ed89efdbd2f94661043",
         "affectsGlobalScope": false
       },
       "../src/app.controller.ts": {
@@ -2537,8 +2537,8 @@
         "affectsGlobalScope": false
       },
       "../src/controllers/expense-type.controller.ts": {
-        "version": "f6ee34ee46efbf6b26a36cdc03646264dd952da04c9bd6b6c57f27d29b6f9c9b",
-        "signature": "6ce22b78c79a80a1d9641eb79282528e610771aab44971b52f30b1a37e5d94a0",
+        "version": "399061a86f487a9cf649ab9d85be16c8c7bbf7ad5a4089b332ca109e03ad42fc",
+        "signature": "943cca8bb8042520c86b9dd5def7d2a19f50e78ffa4f636adbab783b61f3ca99",
         "affectsGlobalScope": false
       },
       "../node_modules/@nestjs/swagger/dist/decorators/api-basic.decorator.d.ts": {

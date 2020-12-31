@@ -15,5 +15,6 @@ export declare class ExpenseService {
     deleteExpenseObjekt(expenseEntity: ExpenseEntity): Promise<void>;
     getAlltypes(): Promise<ExpenseTypeEntity[]>;
     getTypeById(id: any[]): Promise<ExpenseTypeEntity[]>;
+    getTypeIdByDescription(description: string): Promise<any>;
     addExpenseType(expenseTypeEntity: ExpenseTypeEntity): void;
 }

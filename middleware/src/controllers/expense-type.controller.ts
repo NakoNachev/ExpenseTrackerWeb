@@ -14,6 +14,11 @@ export class ExpenseTypeController {
         return this.expenseService.getAlltypes();
     }
 
+    @Get("/:description")
+    public getTypeIdByDescription(@Param('description') description:string){
+        return this.expenseService.getTypeIdByDescription(description);  
+    }
+
     @Post("add/:description")
     public addExpenseType(@Param('description') description:string){
         let expenseTypeEntity:ExpenseTypeEntity = new ExpenseTypeEntity();

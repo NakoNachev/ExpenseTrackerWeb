@@ -36,5 +36,9 @@ export class ApiService {
   public getExpenseTypes(){
     return this.httpClient.get(environment.environment.api + "expense_type/all");
   }
+
+  public getExpenseTypeIdByDescription(description:string){
+    return this.httpClient.get(environment.environment.api + "expense_type/" + description);
+  }
       
 }

@@ -28,20 +28,22 @@
                 <input matInput [matDatepicker]="picker2" name="date" [(ngModel)] = "expenseInputForm.expenseDate">
                 <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
                 <mat-datepicker #picker2 color="warn"></mat-datepicker>
-            </mat-form-field> <br><br>
+            </mat-form-field>
 
             <mat-form-field>
-                <mat-label>Choose an expense type</mat-label>
+                <mat-label>Expense type</mat-label>
                 <mat-select matNativeControl [(ngModel)]="selectedValue" name="type">
                     <mat-option *ngFor="let type of expenseTypes" [value]="type.expenseTypeDescription">
                         {{type.expenseTypeDescription}}
                       </mat-option>
-                </mat-select>
-            </mat-form-field>
+                </mat-select>  
+            </mat-form-field><br>
 
             <button mat-raised-button color="primary" id="button-submit" type="submit" >Submit</button>
 
         </form>
+        {{expenseTypes | json}}
+        {{selectedValue}}
     </div>
 
 </div>

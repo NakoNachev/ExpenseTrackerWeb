@@ -57,6 +57,10 @@ let ExpenseService = class ExpenseService {
     getTypeById(id) {
         return this.expenseTypeRepository.findByIds(id);
     }
+    getTypeIdByDescription(description) {
+        return this.expenseTypeRepository.createQueryBuilder()
+            .where("expense_type_description = :description", { description: description }).getRawOne();
+    }
     addExpenseType(expenseTypeEntity) {
         this.expenseTypeRepository.save(expenseTypeEntity);
     }

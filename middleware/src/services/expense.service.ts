@@ -67,6 +67,13 @@ export class ExpenseService {
         return this.expenseTypeRepository.findByIds(id);
     }
 
+    public getTypeIdByDescription(description:string){
+
+        return this.expenseTypeRepository.createQueryBuilder()
+        .where("expense_type_description = :description", {description:description}).getRawOne();
+
+    }
+
     public addExpenseType(expenseTypeEntity:ExpenseTypeEntity){
         this.expenseTypeRepository.save(expenseTypeEntity);
     }

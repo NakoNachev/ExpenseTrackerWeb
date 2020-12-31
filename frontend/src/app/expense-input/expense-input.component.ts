@@ -11,11 +11,12 @@ import { ApiService } from '../services/api.service';
 })
 export class ExpenseInputComponent implements OnInit {
 
-  public expenseInputForm = new ExpenseInputForm(20,"",new Date("12.10.2020"));
+  public expenseInputForm = new ExpenseInputForm(20,"",new Date("12.10.2020"),"");
   @Input() badgeCounter:any;
   @Output() countChanged: EventEmitter<number> =   new EventEmitter();
   public expenseTypes:any;
   public selectedValue: any;
+  public selectedValueId:string;
 
   constructor(private apiService:ApiService) { }
 
@@ -35,6 +36,22 @@ export class ExpenseInputComponent implements OnInit {
     expenseEntity.setExpenseAmount = this.expenseInputForm.expenseAmount;
     expenseEntity.setExpenseDescription = this.expenseInputForm.expenseDescription;
     expenseEntity.setExpenseDate = this.expenseInputForm.expenseDate;
+
+    // this.apiService.getExpenseTypeIdByDescription(this.selectedValue).subscribe(data =>{
+    //   for (let dat in data){
+    //       console.log(data[dat]);
+    //       expenseEntity.setExpenseTypeId = data[dat];
+    //   }});
+
+    for(let type of this.expenseTypes){
+      console.log("type", type)
+      if(type.expenseTypeDescription === this.selectedValue){
+        console.log("type.expenseId", type.expenseId);
+        expenseEntity.setExpenseTypeId = type.expenseTypeId;
+      }
+    }
+
+
 
     console.log("formsData", this.expenseInputForm);
 
